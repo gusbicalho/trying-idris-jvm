@@ -1,5 +1,7 @@
 module Main
 
+import Trying.FFI
+
 data Tree a = Leaf
             | Node (Tree a) a (Tree a)
 
@@ -17,4 +19,6 @@ tree = Node
         (Node Leaf "2" Leaf)
 
 main : IO ()
-main = printLn $ inorder tree
+main = do
+    Trying.FFI.putStr "Hi!\n"
+    printLn $ inorder tree
